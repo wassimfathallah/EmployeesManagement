@@ -10,6 +10,6 @@ class Salaire extends Model
 {
     /** @use HasFactory<\Database\Factories\SalaireFactory> */
     use HasFactory;
-    use SoftDeletes;
+    // use SoftDeletes;
 
 }

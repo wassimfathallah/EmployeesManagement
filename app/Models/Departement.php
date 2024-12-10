@@ -10,6 +10,6 @@ class Departement extends Model
 {
     /** @use HasFactory<\Database\Factories\DepartementFactory> */
     use HasFactory;
-    use SoftDeletes;
+    // use SoftDeletes;
 
 }
