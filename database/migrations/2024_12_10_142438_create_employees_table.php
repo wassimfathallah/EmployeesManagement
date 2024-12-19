@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             
-             $table->id();
-            $table->string('nom',255);
-            $table->string('prenom',255);
+            $table->id();
+            $table->string('last_name',255);
+            $table->string('first_name',255);
             $table->string('cin',255);
             $table->string('stuation',255);
             $table->string('cnss',255);
