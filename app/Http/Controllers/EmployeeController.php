@@ -41,9 +41,13 @@ class EmployeeController extends Controller
      * Display the specified resource.
      */
     public function show(Employee $employee)
-    { dd("request");
+    { 
 
-        return view('employes.show', compact('employee'));    }
+ 
+        return view('employees.show_employee',compact('employee'));
+   
+    
+    }
 
     /**
      * Show the form for editing the specified resource.
