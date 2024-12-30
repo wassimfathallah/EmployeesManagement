@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('cin',255);
             $table->string('stuation',255);
             $table->string('cnss',255);
-            $table->string('email',255);
+            $table->string('email',255)->unique();
             $table->string('contact',255);
             $table->unsignedBigInteger('departement_id');
             $table->foreign('departement_id')->references('id')->on('departements');

@@ -13,9 +13,12 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $employees = Employee::all();
 
+        //
+        return view('employees.employees', compact('employees'));
+    }
+   
     /**
      * Show the form for creating a new resource.
      */
@@ -29,23 +32,26 @@ class EmployeeController extends Controller
      */
     public function store(StoreEmployeeRequest $request)
     {
-        //
+        Employee::create($request->validated());
+
+        return redirect()->route('employee.index')->with('success', 'Employee created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
     public function show(Employee $employee)
-    {
-        //
-    }
+    { dd("request");
+
+        return view('employes.show', compact('employee'));    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Employee $employee)
     {
-        //
+        return view('employees.edit_employee',compact('employee'));
+
     }
 
     /**
@@ -53,7 +59,11 @@ class EmployeeController extends Controller
      */
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
-        //
+        
+        $employee->update($request->validated());
+
+        return redirect()->route('employee.index')->with('success', 'Employee updated successfully.');
+   
     }
 
     /**
@@ -61,6 +71,9 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        employee::destroy($employee->id);
+
+        return redirect()->route('employee.index')->with('success', 'Employee Deleted successfully.');
+
     }
 }

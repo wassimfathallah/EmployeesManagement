@@ -11,7 +11,7 @@ class StoreEmployeeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -19,10 +19,17 @@ class StoreEmployeeRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'cin' => 'required|string|max:255',
+            'stuation' => 'required|string|max:255',
+            'cnss' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:employees',
+            'contact' => 'required|string|max:255',
+            'departement_id' => 'required|integer'
         ];
     }
 }
