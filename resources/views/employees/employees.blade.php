@@ -33,7 +33,7 @@ Create
                                     <td>{{ $employee->first_name }}</td>
                                     <td>{{ $employee->last_name }}</td>
                                     <td>{{ $employee->email }}</td>
-                                    <td>
+                                    <td class="center">
                                         <a href="javascript:void(0);" class="btn btn-success center" data-toggle="modal" data-target="#employeeModal" data-url="{{ route('employee.show', $employee->id) }}">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
