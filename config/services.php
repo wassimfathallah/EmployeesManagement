@@ -13,6 +13,10 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'google_sheets' => [
+        'credentials' => env('GOOGLE_APPLICATION_CREDENTIALS'),
+        // 'credentials' => storage_path('C:\\Employee\\EmployeesManagement\\public\\credentials.json'),
+    ],
 
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),

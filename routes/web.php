@@ -13,7 +13,9 @@ Route::get('/create', function () {
     return view('employees.create_employee');
 });
 Route::resource('employee', EmployeeController::class);
- 
+use App\Http\Controllers\GoogleSheetsController;
+
+Route::get('/sheet', [GoogleSheetsController::class, 'readSheet']);
 
 Route::get('/', function () {
     return view('dashboard');
