@@ -16,10 +16,10 @@ Route::resource('employee', EmployeeController::class);
 use App\Http\Controllers\GoogleSheetsController;
 
 Route::get('/sheet', [GoogleSheetsController::class, 'readSheet']);
-
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [GoogleSheetsController::class, 'readSheet']);
+// Route::get('/', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

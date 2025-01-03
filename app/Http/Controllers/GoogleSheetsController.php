@@ -34,10 +34,11 @@ public function readSheet()
         $values = $valueRange->getValues();
         $filteredValues = [];
         $sum = 0;
-
+ 
         if (!empty($values)) {
             foreach ($values as $row) {
                 if (isset($row[0]) && $row[0] == $today) {
+                   
                     $filteredValues[] = $row;
                     $columnCValue = isset($row[4]) ? $row[4] : 0;
 
@@ -52,7 +53,12 @@ public function readSheet()
         $allFilteredValues[$ranges[$index]] = $filteredValues;
          $allSums[$ranges[$index]] = $sum;
     }
-     
     return view('employees.sheet_employee', ['allFilteredValues' => $allFilteredValues, 'allSums' => $allSums]);
+    
 }
+
+
+
+
+
 }

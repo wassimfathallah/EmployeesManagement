@@ -24,7 +24,7 @@ Create
                          @if (empty($values))
                         <p>No data found for the specified date.</p>
                         @else
-                        {{-- <table border="1">
+                        <table border="1">
                             <thead>
                                 <tr>
                                     <th>Column A</th>
@@ -45,9 +45,9 @@ Create
                                 </tr>
                                 @endforeach
                             </tbody>
-                        </table> --}}
-                
-                        <h3>Sum du {{ $range }}  : {{ $allSums[$range] }}</h3>
+                        </table>
+                    
+                        <h3>Sum du {{ $range_name=str_replace("!A:E"," ",$range) }} : {{ $allSums[$range] }}</h3>
                         @endif
                         @endforeach
                     </div>
